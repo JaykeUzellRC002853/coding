@@ -34,6 +34,7 @@ namespace coding
 
 
         void derivative()
+        // this calculates velocity
         {
             for (int i = 1; i < table.Count; i++)
 
@@ -46,6 +47,7 @@ namespace coding
         }
 
         void secondderivative()
+        //this calculates acceleration
         {
 
             for (int i = 1; i < table.Count; i++)
@@ -68,6 +70,7 @@ namespace coding
         }
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        //This is open the file on menu strip
         {
             openFileDialog1.FileName = "";
             openFileDialog1.Filter = "CSV Files|*.csv";
@@ -120,6 +123,7 @@ namespace coding
         }
 
         private void AltitudeTimeToolStripMenuItem_Click(object sender, EventArgs e)
+        //This works out altitude and puts it in a graph
         {
             chart1.Series.Clear();
             chart1.ChartAreas[0].AxisX.IsMarginVisible = false;
@@ -147,6 +151,7 @@ namespace coding
 
 
         private void VelocityTimeToolStripMenuItem_Click(object sender, EventArgs e)
+        //This works out velocity and puts on a graph
         {
             derivative();
 
@@ -175,11 +180,13 @@ namespace coding
         }
 
         private void saveGraphToolStripMenuItem_Click(object sender, EventArgs e)
+        //This saves CSV file
         {
             chart1.SaveImage(imageFileName, ChartImageFormat.Png);
         }
 
         private void accelarationToolStripMenuItem_Click(object sender, EventArgs e)
+        ////This works out acceleration and puts on a graph
         {
             secondderivative();
 
@@ -208,6 +215,7 @@ namespace coding
         }
 
         private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
+        //This saves it to PNG file
         {
 
         }
